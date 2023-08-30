@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# By Jesse Amarquaye
+
+# This is a file to run Apache on the holbertonschool/265-0 docker container
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
+
