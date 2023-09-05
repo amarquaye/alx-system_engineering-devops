@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Performing a 301 moved permanently
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+string_for_replacement="server_name _;\ntrewrite ^\/redirect_me https:\/\/github.com\/amarquaye permanent;"
+
+sudo sed -i "string_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+sudo service restart
+
